@@ -1,65 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peta Dunia Fantasi</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('Varethia.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.5); /* sedikit transparan */
       padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    .map-container {
-      display: inline-block;
-      position: relative;
-    }
-    .story-box {
-      margin-top: 20px;
-      background: #ffffff;
-      border: 2px solid #444444;
-      padding: 15px;
-      width: 80%;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 16px;
-      text-align: left;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 40px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-
-  <h1>🗺️ Peta Dunia Fantasi</h1>
-
-  <div class="map-container">
-    <img src="Varethia.png" usemap="#rpgmap" width="600" alt="VARETHIA" />
-
-    <map name="rpgmap">
-      <area shape="circle" coords="120,150,30" href="javascript:void(0);" onclick="showStory('north');" alt="Utara" />
-      <area shape="circle" coords="280,120,30" href="javascript:void(0);" onclick="showStory('east');" alt="Timur" />
-      <area shape="circle" coords="200,280,30" href="javascript:void(0);" onclick="showStory('south');" alt="Selatan" />
-    </map>
+  <div class="container">
+    <h1>🗺️ Peta Dunia Fantasi</h1>
+    <p>Klik wilayah pada peta untuk melihat cerita.</p>
+    <!-- kamu bisa tambahkan <map> atau tombol di sini -->
   </div>
-
-  <div class="story-box" id="storybox">
-    🔍 Klik wilayah pada peta untuk melihat cerita.
-  </div>
-
-  <script>
-    function showStory(region) {
-      const stories = {
-        north: "<h2>❄️ Wilayah Utara</h2><p>Cerita akan hadir...</p>",
-        east: "<h2>🌿 Wilayah Timur</h2><p>Segera dibuka!</p>",
-        south: "<h2>🔥 Wilayah Selatan</h2><p>Legenda belum dimulai...</p>"
-      };
-      document.getElementById("storybox").innerHTML = stories[region] || "Belum ada cerita.";
-    }
-  </script>
-
 </body>
 </html>
