@@ -1,11 +1,6 @@
 function loadContent(section) {
   const content = document.getElementById("main-content");
-if (section === 'HOME') {
-    content.innerHTML = `
-      <h2>SELAMAT DATANG DI VARETHIA</h2>
-    `;
-  }
- else if (section === 'karakter') {
+if (section === 'karakter') {
     content.innerHTML = `
       <h2>Daftar Karakter</h2>
       <ul>
