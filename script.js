@@ -1,6 +1,6 @@
 function loadContent(section) {
   const content = document.getElementById("main-content");
-if (section === 'MENU') {
+if (section === 'HOME') {
     content.innerHTML = `
       <h2>SELAMAT DATANG DI VARETHIA</h2>
     `;
