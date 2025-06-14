@@ -1,7 +1,11 @@
 function loadContent(section) {
   const content = document.getElementById("main-content");
-
-  if (section === 'karakter') {
+if (section === 'MENU') {
+    content.innerHTML = `
+      <h2>SELAMAT DATANG DI VARETHIA</h2>
+    `;
+  }
+ else if (section === 'karakter') {
     content.innerHTML = `
       <h2>Daftar Karakter</h2>
       <ul>
