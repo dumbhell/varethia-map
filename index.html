@@ -2,36 +2,43 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Varethia World</title>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
   <title>Galeri Karakter | Varethia</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2>
-        <ul>
-        <li onclick="loadContent('HOME')">HOME</li>
-      </ul>
-      </h2>
-      <ul>
-        <li onclick="loadContent('karakter')">🧙 Karakter</li>
-        <li onclick="loadContent('wilayah')">🗺️ Wilayah</li>
-        <li onclick="loadContent('cerita')">📖 Cerita</li>
-      </ul>
-    </aside>
+  <h1>🧙‍♂️ Galeri Karakter Varethia</h1>
 
-    <main class="content">
-      <div id="main-content">
-        <h1>Selamat datang di Varethia</h1>
-        <p>Klik menu di kiri untuk mulai menjelajahi dunia fantasi.</p>
-      </div>
-    </main>
+  <div class="filter">
+    <label>Filter Kelas:
+      <select id="filterClass">
+        <option value="all">Semua</option>
+        <option value="penyihir">Penyihir</option>
+        <option value="ksatria">Ksatria</option>
+        <option value="penjaga">Penjaga</option>
+      </select>
+    </label>
   </div>
 
-  <script src="script.js"></script>
+  <div class="gallery">
+    <div class="card" data-class="penjaga">
+      <a href="karakter/ardhan.html" title="Penjaga Api">
+        <img src="assets/images/ardhan.png" alt="Ardhan">
+        <p>Ardhan</p>
+      </a>
+    </div>
+    <div class="card" data-class="penyihir">
+      <a href="karakter/luna.html" title="Penyihir Bulan">
+        <img src="assets/images/luna.png" alt="Luna">
+        <p>Luna</p>
+      </a>
+    </div>
+    <div class="card" data-class="ksatria">
+      <a href="karakter/kael.html" title="Ksatria Timur">
+        <img src="assets/images/kael.png" alt="Kael">
+        <p>Kael</p>
+      </a>
+    </div>
+  </div>
 </body>
 </html>
