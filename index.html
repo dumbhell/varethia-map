@@ -2,79 +2,28 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Peta Dunia Fantasi</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-    }
-
-    .map-container {
-      position: relative;
-      text-align: center;
-    }
-
-    .map-container img {
-      width: 100%;
-      max-width: 1000px;
-      height: auto;
-    }
-
-    #storybox {
-      background-color: rgba(0,0,0,0.7);
-      padding: 15px;
-      margin-top: 20px;
-      width: 90%;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 10px;
-    }
-  </style>
+  <title>Varethia World</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li onclick="loadContent('karakter')">🧙 Karakter</li>
+        <li onclick="loadContent('wilayah')">🗺️ Wilayah</li>
+        <li onclick="loadContent('cerita')">📖 Cerita</li>
+      </ul>
+    </aside>
 
-  <div class="map-container">
-    <img src="sample.jpg" alt="Peta Dunia" usemap="#petaFantasi">
-
-    <map name="petaFantasi">
-      <!-- Koordinat bisa kamu sesuaikan -->
-      <area shape="circle" coords="150,150,40" href="javascript:void(0)" onclick="tampilkanCerita('utara')" alt="Utara">
-      <area shape="circle" coords="300,300,40" href="javascript:void(0)" onclick="tampilkanCerita('tengah')" alt="Tengah">
-      <area shape="circle" coords="450,450,40" href="javascript:void(0)" onclick="tampilkanCerita('selatan')" alt="Selatan">
-    </map>
+    <main class="content">
+      <div id="main-content">
+        <h1>Selamat datang di Varethia</h1>
+        <p>Klik menu di kiri untuk mulai menjelajahi dunia fantasi.</p>
+      </div>
+    </main>
   </div>
 
-  <div id="storybox">
-    🔍 Klik area di peta untuk melihat cerita.
-  </div>
-
-  <script>
-    function tampilkanCerita(zona) {
-      const storybox = document.getElementById("storybox");
-      let cerita = "";
-
-      switch (zona) {
-        case "utara":
-          cerita = "🧊 Wilayah Utara: Tanah es dan naga salju kuno.";
-          break;
-        case "tengah":
-          cerita = "🏰 Kerajaan Tengah: Tempat berkumpulnya semua ras.";
-          break;
-        case "selatan":
-          cerita = "🌋 Selatan: Dataran lava yang dihuni iblis dan golem magma.";
-          break;
-        default:
-          cerita = "Wilayah tidak dikenal.";
-      }
-
-      storybox.innerText = cerita;
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
