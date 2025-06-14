@@ -1,26 +1,44 @@
-<div class="character-grid">
-  <div class="character-card">
-    <img src="Asset/Karakter/IMG_20220623_205805_004.jpg" alt="Tomang" />
-    <div class="character-info">
-      <p class="title">Sang Penjaga Api</p>
-      <h3>Tomang</h3>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Karakter | Varethia</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1>🧙‍♂️ Galeri Karakter Varethia</h1>
+
+  <div class="filter">
+    <label>Filter Kelas:
+      <select id="filterClass">
+        <option value="all">Semua</option>
+        <option value="penyihir">Penyihir</option>
+        <option value="ksatria">Ksatria</option>
+        <option value="penjaga">Penjaga</option>
+      </select>
+    </label>
   </div>
 
-  <div class="character-card">
-    <img src="Asset/Karakter/pepet.jpg" alt="pepet" />
-    <div class="character-info">
-      <p class="title">Penyihir Bulan</p>
-      <h3>pepet</h3>
+  <div class="gallery">
+    <div class="card" data-class="penjaga">
+      <a href="karakter/ardhan.html" title="Penjaga Api">
+        <img src="Asset/Karakter/pepet.jpg" alt="Ardhan">
+        <p>Ardhan</p>
+      </a>
+    </div>
+    <div class="card" data-class="penyihir">
+      <a href="karakter/luna.html" title="Penyihir Bulan">
+        <img src="Asset/Karakter/pepet.jpg" alt="Luna">
+        <p>Luna</p>
+      </a>
+    </div>
+    <div class="card" data-class="ksatria">
+      <a href="karakter/kael.html" title="Ksatria Timur">
+        <img src="Asset/Karakter/pepet.jpg" alt="Kael">
+        <p>Kael</p>
+      </a>
     </div>
   </div>
-
-  <div class="character-card">
-    <img src="Asset/Karakter/sule.jpg" alt="sule" />
-    <div class="character-info">
-      <p class="title">Ksatria Timur</p>
-      <h3>sule</h3>
-    </div>
-  </div>
-</div>
-
+</body>
+</html>
