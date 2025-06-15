@@ -5,10 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyFilters() {
     const selectedClass = classFilter.value;
+    const selectedSocial = socialFilter.value;
+
     cards.forEach(card => {
       const cardClass = card.dataset.class;
+      const cardSocial = card.dataset.social;
+
       const matchClass = selectedClass === "all" || cardClass === selectedClass;
-      card.style.display = (matchClass) ? "block" : "none";
+      const matchSocial = selectedSocial === "all" || cardSocial === selectedSocial;
+
+      card.style.display = (matchClass && matchSocial) ? "block" : "none";
     });
   }
 
