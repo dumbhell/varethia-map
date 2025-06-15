@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".tab-button");
-  const panels = document.querySelectorAll(".benua-panel");
+  const classFilter = document.getElementById("filterClass");
+  const socialFilter = document.getElementById("filterSocial");
+  const cards = document.querySelectorAll(".card");
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      // Remove active dari semua tombol
-      buttons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Sembunyikan semua panel
-      panels.forEach(panel => panel.style.display = "none");
-
-      // Tampilkan panel yang sesuai
-      const target = button.dataset.benua;
-      document.getElementById(target).style.display = "block";
+  function applyFilters() {
+    const selectedClass = classFilter.value;
+    cards.forEach(card => {
+      const cardClass = card.dataset.class;
+      const matchClass = selectedClass === "all" || cardClass === selectedClass;
+      card.style.display = (matchClass) ? "block" : "none";
     });
-  });
+  }
+
+  classFilter.addEventListener("change", applyFilters);
+  socialFilter.addEventListener("change", applyFilters);
 });
