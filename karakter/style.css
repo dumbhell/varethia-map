@@ -12,19 +12,14 @@ body {
 }
 
 /* Bungkus kedua filter dalam satu baris */
-.filter-row {
-  display: flex;
-  gap: 20px; /* Jarak antar dropdown */
-  align-items: center;
-  margin-bottom: 20px;
+.filter select {
+  width: 150px; /* atau 120px, sesuaikan */
 }
 
 /* Optional styling */
 .filter {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  color: #fff;
 }
 
 .gallery {
