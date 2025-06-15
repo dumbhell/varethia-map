@@ -11,17 +11,6 @@ body {
   font-size: 18px;
 }
 
-/* Bungkus kedua filter dalam satu baris */
-.filter select {
-  width: 150px; /* atau 120px, sesuaikan */
-}
-
-/* Optional styling */
-.filter {
-  display: flex;
-  flex-direction: column;
-}
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
