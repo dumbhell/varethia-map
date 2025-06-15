@@ -1,15 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const select = document.getElementById("filterClass");
+  const classFilter = document.getElementById("filterClass");
+  const socialFilter = document.getElementById("filterSocial");
   const cards = document.querySelectorAll(".card");
 
-  select.addEventListener("change", () => {
-    const selected = select.value;
+  function applyFilters() {
+    const selectedClass = classFilter.value;
+    const selectedSocial = socialFilter.value;
+
     cards.forEach(card => {
-      if (selected === "all" || card.dataset.class === selected) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+      const cardClass = card.dataset.class;
+      const cardSocial = card.dataset.social;
+
+      const matchClass = selectedClass === "all" || cardClass === selectedClass;
+      const matchSocial = selectedSocial === "all" || cardSocial === selectedSocial;
+
+      card.style.display = (matchClass && matchSocial) ? "block" : "none";
     });
-  });
+  }
+
+  classFilter.addEventListener("change", applyFilters);
+  socialFilter.addEventListener("change", applyFilters);
 });
+
