@@ -11,6 +11,22 @@ body {
   font-size: 18px;
 }
 
+/* Bungkus kedua filter dalam satu baris */
+.filter-row {
+  display: flex;
+  gap: 20px; /* Jarak antar dropdown */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Optional styling */
+.filter {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #fff;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
