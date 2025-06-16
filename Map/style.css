@@ -2,37 +2,26 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #111;
   color: #eee;
-  padding: 40px;
   margin: 0;
-}
-
-.filter-row {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 30px;
-  align-items: flex-end; /* Biar dropdown sejajar */
-}
-
-.filter {
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  align-items: center;
 }
 
-.filter label {
-  margin-bottom: 6px;
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
 }
-
-.filter select {
-  width: 150px;
-}
-
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 32px;
   justify-content: center;
+  max-width: 1400px;
+  width: 100%;
 }
 
 .card {
@@ -64,22 +53,16 @@ body {
   bottom: 0;
   width: 100%;
   padding: 12px;
-  background: rgba(0, 0, 0, 6);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;      /* Horizontal center */
-  justify-content: center;  /* Optional: vertical center */
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .card-info h3 {
   margin: 0;
-  font-size: 18px;
-}
-
-.card-info p {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #ccc;
+  font-size: 20px;
 }
