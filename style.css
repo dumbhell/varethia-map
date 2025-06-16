@@ -1,8 +1,10 @@
 body {
-  margin: 0;
+  background: url("/varethia-map/Assets/MAP.png") no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
   color: #eee;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
