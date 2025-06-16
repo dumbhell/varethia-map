@@ -1,0 +1,85 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #eee;
+  padding: 40px;
+  margin: 0;
+}
+
+.filter-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 30px;
+  align-items: flex-end; /* Biar dropdown sejajar */
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+.filter label {
+  margin-bottom: 6px;
+}
+
+.filter select {
+  width: 150px;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.card {
+  width: 220px;
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #222;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Horizontal center */
+  justify-content: center;  /* Optional: vertical center */
+  text-align: center;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
