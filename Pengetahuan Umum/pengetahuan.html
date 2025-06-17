@@ -2,128 +2,136 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>PENGETAHUAN UMUM</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelas Varethia</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background: #0d0d0d;
+      background: #111;
       color: #eee;
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 40px;
     }
-
-    .character-page {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
+    h1, h2, h3 {
       text-align: center;
     }
-
-    .character-name {
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .job-tier-section, .summary-section {
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+      padding: 20px;
     }
-
-    .character-title {
-      font-size: 18px;
-      color: #aaa;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
-    }
-
-    .character-quote {
-      font-style: italic;
-      font-size: 20px;
-      margin-bottom: 40px;
-      color: #ccc;
-    }
-
-    .character-info {
+    .class-grid {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 30px;
+      justify-content: center;
+      gap: 20px;
       margin-bottom: 40px;
     }
-
-    .info-block {
-      flex: 1 1 200px;
+    .class-box {
+      background: #222;
+      padding: 20px;
+      width: 220px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #444;
+    }
+    .class-box:hover {
+      transform: scale(1.05);
+      border-color: #f0a500;
+    }
+    .class-box h3 {
+      margin: 0;
+      color: #f0a500;
+    }
+    .class-content {
+      margin-top: 20px;
+      line-height: 1.6;
       background: #1a1a1a;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
     }
-
-    .info-block h4 {
-      margin-bottom: 10px;
-      color: #f0c040;
-      text-transform: uppercase;
+    .hidden {
+      display: none;
     }
-
-    .character-description {
-      text-align: left;
-      line-height: 1.6;
-      font-size: 16px;
-      color: #ddd;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
-    .bio-button {
-      padding: 12px 30px;
-      background: #f0c040;
-      color: #111;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .bio-button:hover {
-      background: #ffd860;
-    }
-
-    .portrait {
-      margin: 40px 0;
-    }
-
-    .portrait img {
-      max-width: 300px;
-      border-radius: 20px;
-      border: 3px solid #333;
+    .section-title {
+      color: #f0a500;
+      font-size: 24px;
+      margin-top: 40px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="character-page">
-    <div class="character-name">ark</div>
-    <div class="character-title">The Eastern Blade</div>
-    <div class="character-quote">"Only the swiftest blade speaks the truth."</div>
+  <h1>📚 Sistem Job & Class di Varethia</h1>
+  <p style="text-align:center; max-width:800px; margin:auto;">Job di dunia Varethia terdiri dari beberapa Tier, yaitu: Basic, Advanced, Master, dan Legendary. Klik salah satu Class di bawah ini untuk melihat detailnya!</p>
 
-    <div class="portrait">
-      <img src="varethia-map/Assets/ark.png" alt="ark">
+  <div class="class-grid">
+    <div class="class-box" onclick="showClass('warrior')">
+      <h3>Warrior Class</h3>
+      <p>Petarung Jarak Dekat</p>
     </div>
-
-    <div class="character-info">
-      <div class="info-block">
-        <h4>RACE</h4>
-      </div>
-      <div class="info-block">
-        <h4>ROLE</h4>
-      </div>
-      <div class="info-block">
-        <h4>REGION</h4>
-      </div>
+    <div class="class-box" onclick="showClass('rogue')">
+      <h3>Rogue Class</h3>
+      <p>Stealth & Kecepatan</p>
     </div>
-
-    <div class="character-description">
-      ark adalah penyihir pedang dari timur yang menguasai teknik sihir dan ilmu pedang secara bersamaan. Ia terkenal karena kecepatannya, dan ketepatan dalam bertarung satu lawan satu. Meskipun terlihat tenang, ark menyimpan dendam pada kerajaan yang menghancurkan keluarganya.
+    <div class="class-box" onclick="showClass('mage')">
+      <h3>Mage Class</h3>
+      <p>Sihir & Ritual</p>
     </div>
-
-    <button class="bio-button">Baca Biografi</button>
+    <div class="class-box" onclick="showClass('priest')">
+      <h3>Priest & Support Class</h3>
+      <p>Buff & Healing</p>
+    </div>
   </div>
+
+  <div id="classContent" class="class-content hidden"></div>
+
+  <div class="summary-section">
+    <h2 class="section-title">📜 Kesimpulan & Sistem Kombinasi</h2>
+    <p>Setiap ras memiliki job yang lebih cocok. Beberapa job memiliki syarat khusus untuk diambil (misalnya, Lich King membutuhkan pemain untuk "mati" dulu). Kombinasi class bisa menciptakan variasi yang unik. Legendary Class membutuhkan tantangan khusus untuk dicapai.</p>
+
+    <h2 class="section-title">📜 Sistem Level & Evolusi Job di Varethia</h2>
+    <table style="width:100%; text-align:left; border-collapse: collapse;">
+      <tr style="border-bottom: 1px solid #555;">
+        <th>Tier</th><th>Level Minimum</th><th>Deskripsi</th>
+      </tr>
+      <tr><td>Basic Class</td><td>Lv 1 - 30</td><td>Job dasar yang bisa diambil sejak awal.</td></tr>
+      <tr><td>Advanced Class</td><td>Lv 30 - 60</td><td>Job lebih spesifik dengan skill baru dan keunggulan unik.</td></tr>
+      <tr><td>Master Class</td><td>Lv 60 - 90</td><td>Ahli di bidangnya dengan kemampuan kuat.</td></tr>
+      <tr><td>Legendary Class</td><td>Lv 90 - 100+</td><td>Job tingkat dewa dengan tantangan khusus.</td></tr>
+    </table>
+
+    <h3>🛡️ Basic → Advanced Class (Lv 30)</h3>
+    <p>Pemain menyelesaikan quest Class Advancement dan kadang butuh item khusus.</p>
+    <h3>⚔️ Advanced → Master Class (Lv 60)</h3>
+    <p>Harus menyelesaikan Elite Trials, dibimbing NPC Master, dan kuasai dual-skill.</p>
+    <h3>🌌 Master → Legendary Class (Lv 90+)</h3>
+    <p>Mythical Trials, transformasi permanen, dan Quest Rahasia diperlukan.</p>
+    <h3>⚙️ Mekanisme Tambahan</h3>
+    <ul>
+      <li><strong>Job Hybrid:</strong> Gabungan dua job setelah Lv 50.</li>
+      <li><strong>Skill Evolution:</strong> Skill meningkat drastis di Master Class.</li>
+      <li><strong>Hidden Classes:</strong> Diperoleh dari misi rahasia atau event langka.</li>
+    </ul>
+  </div>
+
+  <script>
+    const classData = {
+      warrior: `...`,
+      rogue: `...`,
+      mage: `...`,
+      priest: `...`
+    };
+
+    function showClass(type) {
+      const content = document.getElementById("classContent");
+      content.innerHTML = classData[type];
+      content.classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
