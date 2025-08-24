@@ -67,7 +67,14 @@ window.addEventListener("load", () => {
   const mapWidth = map.naturalWidth;
   const mapHeight = map.naturalHeight;
 
-  posX = (containerWidth - mapWidth) / 2;
-  posY = (containerHeight - mapHeight) / 2;
+  // Hitung scale agar map fit ke container (kecuali sidebar)
+  const scaleX = containerWidth / mapWidth;
+  const scaleY = containerHeight / mapHeight;
+  scale = Math.min(scaleX, scaleY); // pilih yang kecil biar muat semua
+
+  // posisi awal di tengah
+  posX = (containerWidth - mapWidth * scale) / 2;
+  posY = (containerHeight - mapHeight * scale) / 2;
+
   updateTransform();
 });
