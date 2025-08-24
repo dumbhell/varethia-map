@@ -1,62 +1,61 @@
-body, html {
+body {
+  background: url("/varethia-map/Assets/MAP.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  color: #eee;
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden; /* hilangkan scrollbar */
-  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
 }
 
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background: #111;
-  color: #00bcd4;
+  width: 110px;
+  background-color: #1c1c1c;
   padding: 20px;
-  z-index: 10;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
 }
 
 .sidebar h2 {
-  margin-top: 0;
+  color: #4fc3f7;
 }
 
 .sidebar ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
-.sidebar ul li {
+.sidebar li {
   margin: 15px 0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
 }
 
-.sidebar ul li a {
-  color: #00bcd4;
+.sidebar li:hover {
+  background-color: #333;
+}
+
+.sidebar a {
+  color: inherit;
   text-decoration: none;
 }
 
+.sidebar a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: #4fc3f7;
+}
+
 .content {
-  margin-left: 200px; /* biar map tidak ketiban sidebar */
-  height: 100%;
-  overflow: hidden;
-  position: relative;
+  flex-grow: 1;
+  padding: 30px;
+  overflow-y: auto;
 }
-
-#map-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-#map {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: top left; /* penting untuk kalkulasi */
-  cursor: grab;
-  max-width: 50;
-  max-height: 50;
-}
-
