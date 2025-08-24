@@ -5,17 +5,10 @@ let posX = 0, posY = 0;
 let isDragging = false;
 let startX, startY;
 
-const minScale = 1;   // zoom normal (default)
-const maxScale = 3;   // bisa diubah kalau mau lebih dekat
+const minScale = 1;   // zoom normal
+const maxScale = 3;   // maksimal zoom
 
 function updateTransform() {
-  // Hitung batas drag biar nggak keluar
-  const maxX = (map.width * scale - window.innerWidth) / 2;
-  const maxY = (map.height * scale - window.innerHeight) / 2;
-
-  posX = Math.min(maxX, Math.max(-maxX, posX));
-  posY = Math.min(maxY, Math.max(-maxY, posY));
-
   map.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
