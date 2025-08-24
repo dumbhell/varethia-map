@@ -52,8 +52,11 @@ body, html {
 
 #map {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   transform-origin: center center;
   cursor: grab;
+  max-width: none; /* wajib, biar nggak auto resize */
+  max-height: none;
 }
+
