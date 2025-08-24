@@ -1,4 +1,5 @@
 const map = document.getElementById("map");
+const container = document.getElementById("map-container");
 
 let scale = 1;
 let posX = 0, posY = 0;
@@ -9,11 +10,27 @@ const minScale = 1;   // zoom normal
 const maxScale = 3;   // maksimal zoom
 
 function updateTransform() {
+  // ukuran asli map
+  const mapWidth = map.naturalWidth * scale;
+  const mapHeight = map.naturalHeight * scale;
+
+  // ukuran container
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+
+  // batas gerakan biar tidak keluar
+  const maxX = Math.max(0, (mapWidth - containerWidth) / 2);
+  const maxY = Math.max(0, (mapHeight - containerHeight) / 2);
+
+  // clamp posisi
+  posX = Math.min(maxX, Math.max(-maxX, posX));
+  posY = Math.min(maxY, Math.max(-maxY, posY));
+
   map.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
 // Zoom pakai scroll
-window.addEventListener("wheel", e => {
+container.addEventListener("wheel", e => {
   e.preventDefault();
   if (e.deltaY < 0) {
     scale = Math.min(scale + 0.1, maxScale);
@@ -41,4 +58,16 @@ window.addEventListener("mousemove", e => {
 window.addEventListener("mouseup", () => {
   isDragging = false;
   map.style.cursor = "grab";
+});
+
+// Auto center saat pertama kali load
+window.addEventListener("load", () => {
+  const containerWidth = container.clientWidth;
+  const containerHeight = container.clientHeight;
+  const mapWidth = map.naturalWidth;
+  const mapHeight = map.naturalHeight;
+
+  posX = (containerWidth - mapWidth) / 2;
+  posY = (containerHeight - mapHeight) / 2;
+  updateTransform();
 });
