@@ -1,55 +1,46 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #eee;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden; /* hilangkan scrollbar */
+  font-family: Arial, sans-serif;
 }
 
 .sidebar {
-  width: 110px;
-  background-color: #1c1c1c;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background: #111;
+  color: #00bcd4;
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  z-index: 10;
 }
 
 .sidebar h2 {
-  color: #4fc3f7;
+  margin-top: 0;
 }
 
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
-.sidebar li {
+.sidebar ul li {
   margin: 15px 0;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 5px;
 }
 
-.sidebar li:hover {
-  background-color: #333;
-}
-
-.sidebar a {
-  color: inherit;
+.sidebar ul li a {
+  color: #00bcd4;
   text-decoration: none;
 }
 
-.sidebar a:hover {
-  color: #4fc3f7;
-}
-
 .content {
-  flex-grow: 1;
-  position: relative;
+  margin-left: 200px; /* biar map tidak ketiban sidebar */
+  height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 #map-container {
@@ -60,37 +51,9 @@ body {
 }
 
 #map {
-  width: 100%;
-  height: auto;
-  transform-origin: center center;
-  transition: transform 0.2s ease;
-}
-
-.overlay {
   position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: white;
-  text-shadow: 0 0 5px black;
-}
-
-#map-container {
-  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* supaya nggak keluar dari layar */
-  z-index: -1; /* tetap jadi background */
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transform-origin: center center;
-  transition: transform 0.2s ease-out;
   cursor: grab;
 }
